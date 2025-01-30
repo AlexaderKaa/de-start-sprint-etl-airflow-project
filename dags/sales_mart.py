@@ -5,11 +5,9 @@ import pandas as pd
 
 from datetime import datetime, timedelta
 from airflow import DAG
-#from airflow.operators.python_operator import PythonOperator, BranchPythonOperator
 from airflow.operators.python import PythonOperator, BranchPythonOperator
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 from airflow.providers.postgres.hooks.postgres import PostgresHook
-#from airflow.providers.http.hooks.http import PostgresHook
 from airflow.providers.http.operators.http import SimpleHttpOperator
 from airflow.providers.http.hooks.http import HttpHook
 from airflow.hooks.base import BaseHook
@@ -185,3 +183,4 @@ with DAG(
             >> update_f_sales
             >> update_f_customer_retention
     )
+758
